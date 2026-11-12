@@ -56,7 +56,7 @@ class AppTheme {
       ),
       navigationBarTheme: NavigationBarThemeData(
         backgroundColor: AppColors.card,
-        indicatorColor: AppColors.accent.withOpacity(0.35),
+        indicatorColor: AppColors.accent.withValues(alpha: 0.35),
       ),
     );
   }
