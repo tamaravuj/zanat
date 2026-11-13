@@ -14,7 +14,7 @@ class ZanatApp extends StatelessWidget {
       title: AppStrings.appName,
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light,
-      initialRoute: AppRoutes.shell,
+      initialRoute: AppRoutes.splash,
       onGenerateRoute: AppRouter.onGenerateRoute,
     );
   }
