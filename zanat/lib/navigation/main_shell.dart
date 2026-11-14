@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../screens/home_screen.dart';
+
 class MainShell extends StatefulWidget {
   const MainShell({super.key});
 
@@ -10,13 +12,14 @@ class MainShell extends StatefulWidget {
 class _MainShellState extends State<MainShell> {
   int _index = 0;
 
-  // Zamenjujemo placeholdere pravim ekranima u narednim commitovima.
-  final List<Widget> _pages = const [
-    _Placeholder('Početna'),
-    _Placeholder('Pretraga'),
-    _Placeholder('Moji termini'),
-    _Placeholder('Omiljeno'),
-    _Placeholder('Profil'),
+  void _select(int i) => setState(() => _index = i);
+
+  List<Widget> get _pages => [
+    HomeScreen(onTabSelected: _select),
+    const _Placeholder('Pretraga'),
+    const _Placeholder('Moji termini'),
+    const _Placeholder('Omiljeno'),
+    const _Placeholder('Profil'),
   ];
 
   @override
@@ -25,7 +28,7 @@ class _MainShellState extends State<MainShell> {
       body: IndexedStack(index: _index, children: _pages),
       bottomNavigationBar: NavigationBar(
         selectedIndex: _index,
-        onDestinationSelected: (i) => setState(() => _index = i),
+        onDestinationSelected: _select,
         destinations: const [
           NavigationDestination(
             icon: Icon(Icons.home_outlined),

@@ -7,6 +7,7 @@ import '../screens/auth/register_screen.dart';
 import '../screens/auth/splash_screen.dart';
 import 'app_routes.dart';
 import 'main_shell.dart';
+import '../screens/categories_screen.dart';
 
 class AppRouter {
   AppRouter._();
@@ -25,6 +26,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const ForgotPasswordScreen());
       case AppRoutes.shell:
         return MaterialPageRoute(builder: (_) => const MainShell());
+      case AppRoutes.categories:
+        return MaterialPageRoute(builder: (_) => const CategoriesScreen());
       // Ostale rute dodajemo uz svaki novi ekran.
       default:
         return MaterialPageRoute(
