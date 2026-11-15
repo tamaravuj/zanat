@@ -8,6 +8,8 @@ import '../screens/auth/splash_screen.dart';
 import 'app_routes.dart';
 import 'main_shell.dart';
 import '../screens/categories_screen.dart';
+import '../models/search_filters.dart';
+import '../screens/search_results_screen.dart';
 
 class AppRouter {
   AppRouter._();
@@ -28,6 +30,12 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const MainShell());
       case AppRoutes.categories:
         return MaterialPageRoute(builder: (_) => const CategoriesScreen());
+      case AppRoutes.searchResults:
+        final filters =
+            settings.arguments as SearchFilters? ?? const SearchFilters();
+        return MaterialPageRoute(
+          builder: (_) => SearchResultsScreen(filters: filters),
+        );
       // Ostale rute dodajemo uz svaki novi ekran.
       default:
         return MaterialPageRoute(

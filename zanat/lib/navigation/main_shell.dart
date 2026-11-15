@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../screens/home_screen.dart';
+import '../screens/search_screen.dart';
 
 class MainShell extends StatefulWidget {
   const MainShell({super.key});
@@ -16,7 +17,7 @@ class _MainShellState extends State<MainShell> {
 
   List<Widget> get _pages => [
     HomeScreen(onTabSelected: _select),
-    const _Placeholder('Pretraga'),
+    const SearchScreen(),
     const _Placeholder('Moji termini'),
     const _Placeholder('Omiljeno'),
     const _Placeholder('Profil'),
