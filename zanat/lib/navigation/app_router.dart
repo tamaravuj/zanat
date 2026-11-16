@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 
+import '../models/search_filters.dart';
+import '../models/shop.dart';
 import '../screens/auth/forgot_password_screen.dart';
 import '../screens/auth/login_screen.dart';
 import '../screens/auth/onboarding_screen.dart';
 import '../screens/auth/register_screen.dart';
 import '../screens/auth/splash_screen.dart';
+import '../screens/categories_screen.dart';
+import '../screens/search_results_screen.dart';
+import '../screens/shop_details_screen.dart';
 import 'app_routes.dart';
 import 'main_shell.dart';
-import '../screens/categories_screen.dart';
-import '../models/search_filters.dart';
-import '../screens/search_results_screen.dart';
 
 class AppRouter {
   AppRouter._();
@@ -36,7 +38,10 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => SearchResultsScreen(filters: filters),
         );
-      // Ostale rute dodajemo uz svaki novi ekran.
+      case AppRoutes.shopDetails:
+        final shop = settings.arguments as Shop;
+        return MaterialPageRoute(builder: (_) => ShopDetailsScreen(shop: shop));
+      // Ostale rute dodajemo ISPRED default-a.
       default:
         return MaterialPageRoute(
           builder: (_) =>
