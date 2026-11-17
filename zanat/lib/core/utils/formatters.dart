@@ -31,3 +31,76 @@ String timeAgo(DateTime d) {
   final w = days ~/ 7;
   return w == 1 ? 'pre 1 nedelju' : 'pre $w nedelje';
 }
+
+const _weekdays = [
+  'Ponedeljak',
+  'Utorak',
+  'Sreda',
+  'Četvrtak',
+  'Petak',
+  'Subota',
+  'Nedelja',
+];
+const _weekdaysAcc = [
+  'ponedeljak',
+  'utorak',
+  'sredu',
+  'četvrtak',
+  'petak',
+  'subotu',
+  'nedelju',
+];
+const _months = [
+  'januar',
+  'februar',
+  'mart',
+  'april',
+  'maj',
+  'jun',
+  'jul',
+  'avgust',
+  'septembar',
+  'oktobar',
+  'novembar',
+  'decembar',
+];
+const _monthsShort = [
+  'JAN',
+  'FEB',
+  'MAR',
+  'APR',
+  'MAJ',
+  'JUN',
+  'JUL',
+  'AVG',
+  'SEP',
+  'OKT',
+  'NOV',
+  'DEC',
+];
+
+String pad2(int n) => n.toString().padLeft(2, '0');
+String weekdayName(DateTime d) => _weekdays[d.weekday - 1];
+String weekdayAcc(DateTime d) => _weekdaysAcc[d.weekday - 1];
+String monthName(DateTime d) => _months[d.month - 1];
+String monthNameCap(DateTime d) {
+  final m = monthName(d);
+  return m[0].toUpperCase() + m.substring(1);
+}
+
+String monthShort(DateTime d) => _monthsShort[d.month - 1];
+String formatDateLong(DateTime d) =>
+    '${weekdayName(d)}, ${d.day}. ${monthName(d)} ${d.year}.';
+String formatDateShort(DateTime d) => '${d.day}. ${monthName(d)} ${d.year}.';
+String formatTime(DateTime d) => '${pad2(d.hour)}:${pad2(d.minute)}';
+String formatMinutes(int m) => '${pad2(m ~/ 60)}:${pad2(m % 60)}';
+bool isSameDay(DateTime a, DateTime b) =>
+    a.year == b.year && a.month == b.month && a.day == b.day;
+DateTime dateOnly(DateTime d) => DateTime(d.year, d.month, d.day);
+
+String pluralize(int n, String one, String few, String many) {
+  final m10 = n % 10, m100 = n % 100;
+  if (m10 == 1 && m100 != 11) return one;
+  if (m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14)) return few;
+  return many;
+}

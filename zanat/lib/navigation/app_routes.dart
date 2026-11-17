@@ -10,6 +10,17 @@ class AppRoutes {
   static const String categories = '/categories';
   static const String searchResults = '/search-results';
   static const String shopDetails = '/shop-details';
+  static const String shopReviews = '/shop-reviews';
   static const String booking = '/booking';
   static const String bookingConfirmation = '/booking-confirmation';
+  static const String bookingDetails = '/booking-details';
+  static const String editProfile = '/edit-profile';
+  static const String notifications = '/notifications';
+  static const String myReviews = '/my-reviews';
+  static const String help = '/help';
+  static const String owner = '/owner';
+  static const String ownerInfo = '/owner-info';
+  static const String ownerServices = '/owner-services';
+  static const String ownerHours = '/owner-hours';
+  static const String admin = '/admin';
 }
