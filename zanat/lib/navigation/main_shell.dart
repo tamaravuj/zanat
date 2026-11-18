@@ -4,23 +4,24 @@ import '../screens/home_screen.dart';
 import '../screens/search_screen.dart';
 
 class MainShell extends StatefulWidget {
-  const MainShell({super.key});
+  final int initialIndex;
+  const MainShell({super.key, this.initialIndex = 0});
 
   @override
   State<MainShell> createState() => _MainShellState();
 }
 
 class _MainShellState extends State<MainShell> {
-  int _index = 0;
+  late int _index = widget.initialIndex;
 
   void _select(int i) => setState(() => _index = i);
 
   List<Widget> get _pages => [
     HomeScreen(onTabSelected: _select),
     const SearchScreen(),
-    const _Placeholder('Moji termini'),
-    const _Placeholder('Omiljeno'),
-    const _Placeholder('Profil'),
+    const _Placeholder('Moji termini'), // commit 17
+    const _Placeholder('Omiljeno'), // commit 18
+    const _Placeholder('Profil'), // commit 19
   ];
 
   @override

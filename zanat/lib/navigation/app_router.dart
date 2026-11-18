@@ -11,6 +11,8 @@ import '../screens/categories_screen.dart';
 import '../screens/search_results_screen.dart';
 import '../screens/shop_details_screen.dart';
 import '../screens/booking_screen.dart';
+import '../models/booking.dart';
+import '../screens/booking_confirmation_screen.dart';
 
 import 'app_routes.dart';
 import 'main_shell.dart';
@@ -36,7 +38,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const ForgotPasswordScreen());
 
       case AppRoutes.shell:
-        return MaterialPageRoute(builder: (_) => const MainShell());
+        final tab = settings.arguments as int? ?? 0;
+        return MaterialPageRoute(builder: (_) => MainShell(initialIndex: tab));
 
       case AppRoutes.categories:
         return MaterialPageRoute(builder: (_) => const CategoriesScreen());
@@ -58,6 +61,12 @@ class AppRouter {
         final shop = settings.arguments as Shop;
 
         return MaterialPageRoute(builder: (_) => BookingScreen(shop: shop));
+
+      case AppRoutes.bookingConfirmation:
+        final booking = settings.arguments as Booking;
+        return MaterialPageRoute(
+          builder: (_) => BookingConfirmationScreen(booking: booking),
+        );
 
       default:
         return MaterialPageRoute(
