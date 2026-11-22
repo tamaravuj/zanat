@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:zanat/screens/edit_profile_screen.dart';
+import 'package:zanat/screens/help_screen.dart';
+import 'package:zanat/screens/my_reviews_screen.dart';
+import 'package:zanat/screens/notifications_screen.dart';
 
 import '../models/search_filters.dart';
 import '../models/shop.dart';
@@ -78,7 +82,14 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => BookingDetailsScreen(bookingId: id),
         );
-
+      case AppRoutes.editProfile:
+        return MaterialPageRoute(builder: (_) => const EditProfileScreen());
+      case AppRoutes.notifications:
+        return MaterialPageRoute(builder: (_) => const NotificationsScreen());
+      case AppRoutes.myReviews:
+        return MaterialPageRoute(builder: (_) => const MyReviewsScreen());
+      case AppRoutes.help:
+        return MaterialPageRoute(builder: (_) => const HelpScreen());
       default:
         return MaterialPageRoute(
           builder: (_) =>

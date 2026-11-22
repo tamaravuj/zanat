@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zanat/screens/profile_screen.dart';
 
 import '../screens/home_screen.dart';
 import '../screens/search_screen.dart';
@@ -23,7 +24,7 @@ class _MainShellState extends State<MainShell> {
     const SearchScreen(),
     MyBookingsScreen(onTabSelected: _select),
     FavoritesScreen(onTabSelected: _select),
-    const _Placeholder('Profil'), 
+    const ProfileScreen(),
   ];
 
   @override

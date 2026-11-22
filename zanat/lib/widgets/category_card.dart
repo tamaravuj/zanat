@@ -120,35 +120,44 @@ class CategoryTile extends StatelessWidget {
         onTap: onTap,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 14),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                width: 37,
-                height: 37,
-                decoration: BoxDecoration(
-                  color: category.tileColor,
-                  borderRadius: BorderRadius.circular(11),
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            alignment: Alignment.centerLeft,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  width: 37,
+                  height: 37,
+                  decoration: BoxDecoration(
+                    color: category.tileColor,
+                    borderRadius: BorderRadius.circular(11),
+                  ),
+                  child: Icon(
+                    category.icon,
+                    color: category.iconColor,
+                    size: 20,
+                  ),
                 ),
-                child: Icon(category.icon, color: category.iconColor, size: 20),
-              ),
-              const SizedBox(height: 13),
-              Text(
-                category.singular,
-                style: const TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w700,
+                const SizedBox(height: 13),
+                Text(
+                  category.singular,
+                  style: const TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w700,
+                  ),
                 ),
-              ),
-              const SizedBox(height: 4),
-              Text(
-                '$count u blizini',
-                style: const TextStyle(
-                  fontSize: 9,
-                  color: AppColors.textSecondary,
+                const SizedBox(height: 4),
+                Text(
+                  '$count u blizini',
+                  style: const TextStyle(
+                    fontSize: 9,
+                    color: AppColors.textSecondary,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
