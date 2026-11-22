@@ -14,6 +14,7 @@ import '../screens/booking_screen.dart';
 import '../models/booking.dart';
 import '../screens/booking_confirmation_screen.dart';
 import '../screens/shop_reviews_screen.dart';
+import '../screens/booking_details_screen.dart';
 
 import 'app_routes.dart';
 import 'main_shell.dart';
@@ -71,6 +72,12 @@ class AppRouter {
       case AppRoutes.shopReviews:
         final shop = settings.arguments as Shop;
         return MaterialPageRoute(builder: (_) => ShopReviewsScreen(shop: shop));
+
+      case AppRoutes.bookingDetails:
+        final id = settings.arguments as String;
+        return MaterialPageRoute(
+          builder: (_) => BookingDetailsScreen(bookingId: id),
+        );
 
       default:
         return MaterialPageRoute(

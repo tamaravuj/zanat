@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../screens/home_screen.dart';
 import '../screens/search_screen.dart';
+import '../screens/my_bookings_screen.dart';
+import '../screens/favorites_screen.dart';
 
 class MainShell extends StatefulWidget {
   final int initialIndex;
@@ -19,9 +21,9 @@ class _MainShellState extends State<MainShell> {
   List<Widget> get _pages => [
     HomeScreen(onTabSelected: _select),
     const SearchScreen(),
-    const _Placeholder('Moji termini'), // commit 17
-    const _Placeholder('Omiljeno'), // commit 18
-    const _Placeholder('Profil'), // commit 19
+    MyBookingsScreen(onTabSelected: _select),
+    FavoritesScreen(onTabSelected: _select),
+    const _Placeholder('Profil'), 
   ];
 
   @override

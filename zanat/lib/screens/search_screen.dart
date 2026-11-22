@@ -162,7 +162,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    _label('Cena (od)'),
+                    _label('Cena usluge'),
                     _dropdown<int>(
                       value: _maxPrice,
                       items: const [
