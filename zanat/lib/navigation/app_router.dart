@@ -3,6 +3,10 @@ import 'package:zanat/screens/edit_profile_screen.dart';
 import 'package:zanat/screens/help_screen.dart';
 import 'package:zanat/screens/my_reviews_screen.dart';
 import 'package:zanat/screens/notifications_screen.dart';
+import 'package:zanat/screens/owner/owner_hours_screen.dart';
+import 'package:zanat/screens/owner/owner_info_screen.dart';
+import 'package:zanat/screens/owner/owner_services_screen.dart';
+import 'package:zanat/screens/owner/owner_shell.dart';
 
 import '../models/search_filters.dart';
 import '../models/shop.dart';
@@ -90,6 +94,14 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const MyReviewsScreen());
       case AppRoutes.help:
         return MaterialPageRoute(builder: (_) => const HelpScreen());
+      case AppRoutes.owner:
+        return MaterialPageRoute(builder: (_) => const OwnerShell());
+      case AppRoutes.ownerInfo:
+        return MaterialPageRoute(builder: (_) => const OwnerInfoScreen());
+      case AppRoutes.ownerServices:
+        return MaterialPageRoute(builder: (_) => const OwnerServicesScreen());
+      case AppRoutes.ownerHours:
+        return MaterialPageRoute(builder: (_) => const OwnerHoursScreen());
       default:
         return MaterialPageRoute(
           builder: (_) =>
