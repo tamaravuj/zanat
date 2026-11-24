@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zanat/screens/admin_screen.dart';
 import 'package:zanat/screens/edit_profile_screen.dart';
 import 'package:zanat/screens/help_screen.dart';
 import 'package:zanat/screens/my_reviews_screen.dart';
@@ -102,6 +103,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const OwnerServicesScreen());
       case AppRoutes.ownerHours:
         return MaterialPageRoute(builder: (_) => const OwnerHoursScreen());
+      case AppRoutes.admin:
+        return MaterialPageRoute(builder: (_) => const AdminScreen());
       default:
         return MaterialPageRoute(
           builder: (_) =>
